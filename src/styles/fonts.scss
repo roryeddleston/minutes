@@ -1,0 +1,36 @@
+$dm-sans:  'DM Sans', sans-serif;
+$poppins-black: 'Poppins-Black', sans-serif;
+$poppins-semi-bold: 'Poppins-Semi-Bold', sans-serif;
+
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/DMSans24pt-Regular.eot');
+    src: url('./fonts/DMSans24pt-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/DMSans24pt-Regular.woff2') format('woff2'),
+        url('./fonts/DMSans24pt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Poppins-Black';
+    src: url('./fonts/Poppins-Black.eot');
+    src: url('./fonts/Poppins-Black.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Poppins-Black.woff2') format('woff2'),
+        url('./fonts/Poppins-Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Poppins-Semi-Bold';
+    src: url('./fonts/Poppins-SemiBold.eot');
+    src: url('./fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Poppins-SemiBold.woff2') format('woff2'),
+        url('./fonts/Poppins-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

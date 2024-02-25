@@ -1,0 +1,21 @@
+@import "./fonts";
+@import "./animations";
+@import "./colours";
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #F8F9FA;
+    font-family: $dm-sans;
+    color: $primaryColor;
+
+    h2 {
+        font-family: $poppins-semi-bold;
+    }
+
+    .bold {
+        font-family: $poppins-black;
+    }
+
+}
