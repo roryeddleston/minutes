@@ -1,0 +1,30 @@
+@import "../../styles/fonts";
+@import "../../styles/animations";
+@import "../../styles/colours";
+
+.footer {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    padding: 50px 0px;
+
+    .inner {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        margin: 0px auto;
+        width: 100%;
+        max-width: 1200px;
+
+        .copyright {
+            box-sizing: border-box;
+            position: relative;
+            display: block;
+            color: #2e2a39;
+            font-size: 13px;
+            text-align: center;
+            letter-spacing: 0.7px;
+            line-height: 17px;
+        }
+    }
+}

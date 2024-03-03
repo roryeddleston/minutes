@@ -2,6 +2,10 @@
 @import "./animations";
 @import "./colours";
 
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     margin: 0px;
@@ -9,13 +13,5 @@ body {
     background: #F8F9FA;
     font-family: $dm-sans;
     color: $primaryColor;
-
-    h2 {
-        font-family: $poppins-semi-bold;
-    }
-
-    .bold {
-        font-family: $poppins-black;
-    }
 
 }
