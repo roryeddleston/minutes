@@ -1,9 +1,55 @@
-// @import "../../styles/fonts";
-// @import "../../styles/animations";
-// @import "../../styles/colours";
+@import "../../styles/fonts";
+@import "../../styles/animations";
+@import "../../styles/colours";
 
 .home {
     box-sizing: border-box;
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+
+    .goals-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .new-goal-btn {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            color: $secondaryColor;
+        }
+
+        .new-goal-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+
+        .new-goal-btn-text {
+            margin-left: 10px;
+            font-size: 1.2em;
+        }
+    }
+
+    &.show-detail .goals-container {
+        flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+        .goals-container {
+            flex-direction: column;
+        }
+    }
 }

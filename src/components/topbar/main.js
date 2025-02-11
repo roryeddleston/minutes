@@ -9,7 +9,9 @@ export default function Topbar(props) {
         <div className="topbar">
             <div className="inner">
                 <a className="logo" href="/"></a>
-                <h1>{config.title}</h1>
+                <h1>
+                    Reps <span className="ampersand">&</span> mins
+                </h1>
             </div>
         </div>
     )

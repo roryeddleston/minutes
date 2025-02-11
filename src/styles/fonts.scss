@@ -1,6 +1,7 @@
 $dm-sans:  'DM Sans', sans-serif;
 $poppins-black: 'Poppins-Black', sans-serif;
 $poppins-semi-bold: 'Poppins-Semi-Bold', sans-serif;
+$poppins-regular: 'Poppins-Regular', sans-serif;
 
 
 @font-face {
@@ -31,6 +32,13 @@ $poppins-semi-bold: 'Poppins-Semi-Bold', sans-serif;
     src: url('./fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
         url('./fonts/Poppins-SemiBold.woff2') format('woff2'),
         url('./fonts/Poppins-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./fonts/Poppins-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }

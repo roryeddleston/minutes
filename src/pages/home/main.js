@@ -1,44 +1,83 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.scss';
-import config from './config.json';
-import LogoutButton from '../../components/logoutButton/main';
-import UserProfile from '../../components/userProfile/main';
+import { useAuth0 } from '@auth0/auth0-react';
 import Layout from '../../components/layout/main';
 import NewGoalForm from '../../components/newGoalForm/main';
-import { useAuth0 } from '@auth0/auth0-react';
-import Modal from '../../components/modal/main';
+import { FaPlus } from 'react-icons/fa';
+import GoalsList from '../../components/goalsList/main';
+import GoalDetail from '../../components/goalDetail/main';
 import { GoalsProvider } from '../../goalContext';
 
+export default function Home() {
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+  const [selectedGoal, setSelectedGoal] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [isMobileDetailView, setIsMobileDetailView] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileDetailView(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-export default function Home(props) {
+  const closePopup = () => setShowPopup(false);
 
-	const { isAuthenticated, isLoading } = useAuth0();
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const { loginWithRedirect } = useAuth0();
+  const handleDeleteGoal = () => {
+    setSelectedGoal(null);
+    setIsMobileDetailView(false);
+  };
 
-	if (isLoading) {
-		return <div>Loading...</div>; // Or any loading indicator
-	  }
+  const onExitEditMode = () => setIsEditing(false);
 
-	return isAuthenticated ? (
-		<div className="home">
-			<Layout >
-				<h1>{config.intro.heading}</h1>
-				<LogoutButton />
-				<button onClick={() => setIsModalOpen(true)}>New Goal</button>
-				<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-				<GoalsProvider>
-					<NewGoalForm />
-				</GoalsProvider>
+  const handleSelectGoal = (goal) => {
+    if (selectedGoal && goal.id !== selectedGoal.id) {
+      onExitEditMode();
+    }
+    setSelectedGoal(goal);
+    if (window.innerWidth <= 768) {
+      setIsMobileDetailView(true);
+    }
+  };
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-				</Modal>
-				<div id="modal-root"></div>
-			</Layout>
-		</div>
-	) : (
-		loginWithRedirect()
-	  )
-
+  return isAuthenticated ? (
+    <div className={`home ${isMobileDetailView ? 'show-detail' : ''}`}>
+      <Layout>
+        <GoalsProvider>
+          <button className="new-goal-btn" onClick={() => setShowPopup(true)}>
+            <span className="new-goal-icon"><FaPlus /></span>
+            <span className="new-goal-btn-text">New goal</span>
+          </button>
+          {showPopup && (
+            <NewGoalForm onGoalCreated={closePopup} onClose={closePopup} setSelectedGoal={setSelectedGoal} />
+          )}
+          <div className="goals-container">
+            {!isMobileDetailView && (
+              <GoalsList setSelectedGoal={handleSelectGoal} selectedGoal={selectedGoal} onExitEditMode={onExitEditMode} />
+            )}
+            {selectedGoal && (
+              <GoalDetail
+                goal={selectedGoal}
+                onDelete={handleDeleteGoal}
+                isEditing={isEditing}
+                setIsEditing={setIsEditing}
+                isMobileDetailView={isMobileDetailView}
+                setIsMobileDetailView={setIsMobileDetailView}
+              />
+            )}
+          </div>
+        </GoalsProvider>
+      </Layout>
+    </div>
+  ) : (
+    loginWithRedirect()
+  );
 }

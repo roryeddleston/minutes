@@ -5,19 +5,17 @@ import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Web from './web';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Auth0Provider
-    domain="dev-4e4u3gxibnl7nmcw.uk.auth0.com"
-    clientId="QN607HQCKpeic1uukyauwt6VZTxIHoym"
-    authorizationParams={{
-      redirect_uri: 'http://localhost:3000/home'
-    }}
-  >
-    <Web />
-  </Auth0Provider>
+      domain="dev-4e4u3gxibnl7nmcw.uk.auth0.com"
+      clientId="QN607HQCKpeic1uukyauwt6VZTxIHoym"
+      redirectUri={window.location.origin + '/'}
+      cacheLocation="localstorage"
+    >
+      <Web />
+    </Auth0Provider>
   </React.StrictMode>
 );
 

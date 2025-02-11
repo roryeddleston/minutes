@@ -1,0 +1,116 @@
+{
+  "activities": {
+    "code": {
+      "icon": "code_icon",
+      "alt": "Coding Icon"
+    },
+    "cold shower": {
+      "icon": "cold_shower_icon",
+      "alt": "Cold Shower Icon"
+    },
+    "cooking": {
+      "icon": "cooking_icon",
+      "alt": "Cooking Icon"
+    },
+    "cycling": {
+      "icon": "cycling_icon",
+      "alt": "Cycling Icon"
+    },
+    "drink water": {
+      "icon": "drink_water_icon",
+      "alt": "Drink Water Icon"
+    },
+    "eat healthy": {
+      "icon": "eat_healthy_icon",
+      "alt": "Eat Healthy Icon"
+    },
+    "exercise": {
+      "icon": "exercise_icon",
+      "alt": "Exercise Icon"
+    },
+    "hiking": {
+      "icon": "hiking_icon",
+      "alt": "Hiking Icon"
+    },
+    "journaling": {
+      "icon": "journaling_icon",
+      "alt": "Journaling Icon"
+    },
+    "learning a language": {
+      "icon": "language_learning_icon",
+      "alt": "Learning a Language Icon"
+    },
+    "meditation": {
+      "icon": "meditation_icon",
+      "alt": "Meditation Icon"
+    },
+    "mma": {
+      "icon": "mma_icon",
+      "alt": "MMA Icon"
+    },
+    "photography": {
+      "icon": "photography_icon",
+      "alt": "Photography Icon"
+    },
+    "playing an instrument": {
+      "icon": "instrument_icon",
+      "alt": "Playing an Instrument Icon"
+    },
+    "pressups": {
+      "icon": "pressups_icon",
+      "alt": "Press-ups Icon"
+    },
+    "reading": {
+      "icon": "reading_icon",
+      "alt": "Reading Icon"
+    },
+    "running": {
+      "icon": "running_icon",
+      "alt": "Running Icon"
+    },
+    "sleep early": {
+      "icon": "sleep_early_icon",
+      "alt": "Sleep Early Icon"
+    },
+    "steps": {
+      "icon": "steps_icon",
+      "alt": "Steps Icon"
+    },
+    "stretching": {
+      "icon": "stretching_icon",
+      "alt": "Stretching Icon"
+    },
+    "study": {
+      "icon": "study_icon",
+      "alt": "Study Icon"
+    },
+    "swimming": {
+      "icon": "swimming_icon",
+      "alt": "Swimming Icon"
+    },
+    "time in nature": {
+      "icon": "nature_icon",
+      "alt": "Time in Nature Icon"
+    },
+    "wake up early": {
+      "icon": "wake_up_early_icon",
+      "alt": "Wake Up Early Icon"
+    },
+    "walking": {
+      "icon": "walking_icon",
+      "alt": "Walking Icon"
+    },
+    "weightlifting": {
+      "icon": "barbell_icon",
+      "alt": "Weightlifting Icon"
+    },
+    "writing": {
+      "icon": "writing_icon",
+      "alt": "Writing Icon"
+    },
+    "yoga": {
+      "icon": "yoga_icon",
+      "alt": "Yoga Icon"
+    }
+  }
+}
