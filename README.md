@@ -1,3 +1,32 @@
+Project Overview
+
+This project is a goal and habit tracking application built using React. It helps users set, track, and update their goals, with features for progress visualization, goal management, and collaborative tracking.
+
+📌 Features & Functionality
+
+📊 Goal Tracking
+	•	Users can create goals with a target number (e.g., “Run 50 miles”).
+	•	Users update their current progress.
+	•	The app displays a progress bar based on the goal percentage.
+
+✏️ Editing Goals
+	•	Click the edit button (✏️) to modify goal details.
+	•	Update the current number or target number.
+	•	Click Save to update Firestore.
+
+🗑️ Deleting Goals
+	•	Click the trash icon (🗑️) to delete a goal.
+	•	A confirmation popup appears before deletion.
+
+📍 Apple Maps Integration (Mobile)
+	•	Tracks user location via Apple Maps.
+	•	Allows location-based habit tracking.
+
+👥 User Authentication
+	•	Users sign in via Auth0 for a personalized experience.
+	•	User data is stored in Firebase Firestore.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
