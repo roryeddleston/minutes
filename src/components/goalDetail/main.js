@@ -110,28 +110,34 @@ const GoalDetail = ({ goal, onDelete, isMobileDetailView, setIsMobileDetailView 
         </div>
 
         {!isEditing && (
-          <form onSubmit={handleAddAmountSubmit}>
-            <input
-              className="amount-input"
-              type="number"
-              value={additionalAmount}
-              onChange={(e) => setAdditionalAmount(e.target.value)}
-              placeholder="Add amount"
-            />
-            <button className="plus-10" type="button" onClick={addTenToAmount}>+10</button><br />
-            <button className="submit-button" type="submit">Submit</button>
+          <form onSubmit={handleAddAmountSubmit} className="action-form">
+            <div className="input-group">
+              <input
+                className="amount-input"
+                type="number"
+                value={additionalAmount}
+                onChange={(e) => setAdditionalAmount(e.target.value)}
+                placeholder="Add amount"
+                required
+              />
+              <button className="plus-10" type="button" onClick={addTenToAmount}>+10</button>
+            </div>
+
+            <div className="action-container">
+              <button className="submit-button" type="submit">Submit</button>
+
+              <div className="icon-group">
+                <CiEdit className="icon" onClick={() => setIsEditing(!isEditing)} />
+                <FaTrash className="icon delete-icon" onClick={() => setShowDeletePopup(true)} />
+              </div>
+            </div>
           </form>
         )}
-
-        <div className="icon-group">
-          <CiEdit className="icon" onClick={() => setIsEditing(!isEditing)} />
-          <FaTrash className="icon delete-icon" onClick={() => setShowDeletePopup(true)} />
-        </div>
 
         {isEditing && (
           <form onSubmit={saveEdit} className="edit-form">
             <div className="current-amount">
-              <label htmlFor="currentNumber">Current Amount</label>
+              <label htmlFor="currentNumber">Current Amount: </label>
               <input
                 id="currentNumber"
                 type="number"
@@ -142,7 +148,7 @@ const GoalDetail = ({ goal, onDelete, isMobileDetailView, setIsMobileDetailView 
               />
             </div>
             <div className="target-amount">
-              <label htmlFor="targetNumber">Goal Target</label>
+              <label htmlFor="targetNumber">Goal Target: </label>
               <input
                 id="targetNumber"
                 type="number"

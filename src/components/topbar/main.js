@@ -12,6 +12,7 @@ export default function Topbar(props) {
                 <h1>
                     Reps <span className="ampersand">&</span> mins
                 </h1>
+                {/* <h2>Habit tracking app</h2> */}
             </div>
         </div>
     )

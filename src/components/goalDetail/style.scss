@@ -24,9 +24,8 @@
             width: 100%;
 
             .goal-name {
-                box-sizing: border-box;
                 flex-grow: 1;
-                padding: 10px 0px 10px 10px;
+                padding: 10px;
                 font-size: 18px;
                 font-family: $dm-sans;
                 font-weight: normal;
@@ -35,7 +34,6 @@
             }
 
             .goal-icon {
-                box-sizing: border-box;
                 display: flex;
                 align-items: center;
                 margin-left: 10px;
@@ -45,7 +43,6 @@
         }
 
         .goal-amount {
-            box-sizing: border-box;
             display: block;
             margin: 20px 0;
             text-align: right;
@@ -72,9 +69,12 @@
             border: 2px solid $secondaryColor;
         }
 
-        form {
-            box-sizing: border-box;
+        .action-form {
             margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
 
             label {
                 display: block;
@@ -83,23 +83,23 @@
                 color: #333;
             }
 
-            input,
+            .input-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+            }
+
             .amount-input {
                 padding: 8px;
-                width: 100%;
+                width: 200px;
                 border: 1px solid #ddd;
                 border-radius: 4px;
                 font-size: 14px;
                 line-height: 1.2;
             }
 
-            .amount-input {
-                width: 200px;
-            }
-
             .plus-10 {
-                box-sizing: border-box;
-                display: inline-block;
                 padding: 8px 12px;
                 margin-left: 10px;
                 border-radius: 4px;
@@ -109,6 +109,7 @@
                 cursor: pointer;
                 text-align: center;
                 transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+                white-space: nowrap;
 
                 &:hover {
                     transform: translateY(2px);
@@ -125,88 +126,99 @@
                 100% { background-color: $primaryColor; }
             }
 
+            .action-container {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                margin-top: 10px;
+            }
+
             .submit-button {
-                box-sizing: border-box;
-                margin-top: 40px;
-                padding: 15px 25px;
+                margin-top: 20px;
+                padding: 10px 20px;
                 background-color: $primaryColor;
                 color: white;
                 border-radius: 8px;
                 cursor: pointer;
+                border: none;
 
                 &:hover {
                     background-color: $secondaryColor;
                 }
             }
 
-            #currentNumber, #targetNumber {
-                box-sizing: border-box;
-                margin: 1px auto;
-                width: 100%;
-                padding: 10px 0px 10px 10px;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                font-size: 14px;
-                font-family: $dm-sans;
-            }
-
-            .edit-actions {
-                margin-top: 20px;
+            .icon-group {
                 display: flex;
                 gap: 20px;
+                margin-left: auto; // Pushes icons to the right
+                margin-top: 10px;
 
-                .btn-save,
-                .btn-cancel {
-                    padding: 15px 25px;
-                    border: none;
-                    border-radius: 4px;
-                    font-size: 14px;
+                .icon {
+                    width: 30px;
+                    height: auto;
                     cursor: pointer;
-                    font-family: $dm-sans;
-                }
-
-                .btn-save {
-                    background-color: $primaryColor;
-                    color: white;
+                    transition: color 0.2s ease-in-out;
 
                     &:hover {
-                        background-color: darken($primaryColor, 10%);
+                        color: $secondaryColor;
                     }
                 }
 
-                .btn-cancel {
-                    background-color: #f44336;
-                    color: white;
-
-                    &:hover {
-                        background-color: darken(#f44336, 10%);
-                    }
+                .delete-icon {
+                    width: 22px;
+                    color: $primaryColor;
                 }
             }
         }
 
-        .icon-group {
+        .current-amount,
+        .target-amount {
+            margin: 20px 0;
             display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-            margin-top: 20px;
+            flex-direction: column;
+            margin-bottom: 10px;
 
-            .icon {
-                font-size: 1.5em;
-                color: $primaryColor;
+            label {
+                padding-bottom: 10px;
+            }
+
+            input {
+                padding: 8px;
+            }
+        }
+
+
+        .edit-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+
+            .btn-save,
+            .btn-cancel {
+                padding: 12px 22px;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
                 cursor: pointer;
-                transition: color 0.2s ease-in-out;
+                font-family: $dm-sans;
+            }
+
+            .btn-save {
+                background-color: $primaryColor;
+                color: white;
 
                 &:hover {
-                    color: $secondaryColor;
+                    background-color: darken($primaryColor, 10%);
                 }
             }
 
-            .delete-icon {
-                color: $primaryColor;
+            .btn-cancel {
+                background-color: #f44336;
+                color: white;
 
                 &:hover {
-                    color: darken($primaryColor, 10%);
+                    background-color: darken(#f44336, 10%);
                 }
             }
         }
@@ -299,6 +311,7 @@
 
         .back-button {
             display: block;
+            margin: 30px auto 40px auto;
         }
     }
 }

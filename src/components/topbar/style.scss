@@ -23,7 +23,6 @@
             text-align: center;
             margin-top: 20px;
             padding: 20px;
-            border-radius: 8px;
             font-family: $poppins-regular;
             font-size: 40px;
             letter-spacing: 1px;
@@ -34,6 +33,12 @@
                 color: $secondaryColor;
             }
         }
+
+        // h2 {
+        //     text-align: center;
+        //     padding: 20px;
+        //     background: cadetblue;
+        // }
     }
 
     @media only screen and (max-width: 1300px) {
