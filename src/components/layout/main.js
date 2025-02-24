@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './style.scss';
 import Topbar from "../topbar/main";
 import Footer from "../footer/main";
