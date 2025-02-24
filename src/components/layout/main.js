@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss';
-import media from '../../media';
 import Topbar from "../topbar/main";
 import Footer from "../footer/main";
 

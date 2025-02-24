@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss';
-import config from './config.json';
-import media from '../../media';
 
 export default function Footer(props) {
     const [currYear, setCurrYear] = useState(new Date().getFullYear());
