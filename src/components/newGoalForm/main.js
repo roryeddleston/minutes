@@ -11,7 +11,7 @@ const NewGoalForm = ({ onGoalCreated, onClose, setSelectedGoal }) => {
   const [name, setName] = useState('');
   const [unit, setUnit] = useState('');
   const [startingNumber, setStartingNumber] = useState(0);
-  const [currentNumber, setCurrentNumber] = useState('');
+  const [currentNumber] = useState('');
   const [targetNumber, setTargetNumber] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());

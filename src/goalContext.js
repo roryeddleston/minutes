@@ -39,7 +39,7 @@ export const GoalsProvider = ({ children }) => {
 
       return () => unsubscribe();
     }
-  }, [user]);
+  }, [user, goalsCollectionRef]);
 
   // 🔹 Add a new goal (Firestore handles real-time update)
   const addGoal = async (goal) => {
