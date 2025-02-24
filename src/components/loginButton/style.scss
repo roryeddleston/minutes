@@ -1,0 +1,29 @@
+@import "../../styles/fonts";
+@import "../../styles/animations";
+@import "../../styles/colours";
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 400px auto;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: $primaryColor;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center;
+
+    &:hover {
+        background-color: $secondaryColor;
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
