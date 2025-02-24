@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './style.scss';
 
 export default function Footer(props) {
-    const [currYear, setCurrYear] = useState(new Date().getFullYear());
+    const currYear = new Date().getFullYear();
 
     return (
         <footer className="footer">
